@@ -4,7 +4,6 @@ pipeline {
       yaml '''
         apiVersion: v1
         kind: Pod
-        namespace: jenkins-n
         metadata:
           labels:
             app: test
@@ -39,11 +38,12 @@ pipeline {
     }      
   }
   environment{
-    DOCKERHUB_USERNAME = "shimuul921"
-    APP_NAME = "kaniko-webapp-demo-jenkins"
+    DOCKERHUB_USERNAME = "shimul921"
+    APP_NAME = "kaniko-webapp-demo"
     IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
     IMAGE_TAG = "${BUILD_NUMBER}"
   }
+  stages {
     stage('Build SW'){
       steps {
         container('maven'){
@@ -59,4 +59,4 @@ pipeline {
       }
     }
   }
-
+}
