@@ -9,7 +9,7 @@ spec:
     args:
     - "--dockerfile=Dockerfile"
     - "--context=git://github.com/kunchalavikram1427/kaniko-demo.git" #git://github.com/kunchalavikram1427/connected-app.git#refs/heads/master
-    - "--destination=kunchalavikram/kaniko-demo-image:latest"
+    - "--destination=shimul921/kaniko-demo-image:latest"
     volumeMounts:
     - name: kaniko-secret
       mountPath: /kaniko/.docker

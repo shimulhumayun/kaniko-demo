@@ -38,20 +38,11 @@ pipeline {
     }      
   }
   environment{
-    DOCKERHUB_USERNAME = "kunchalavikram"
-    APP_NAME = "kaniko-webapp-demo"
+    DOCKERHUB_USERNAME = "shimuul921"
+    APP_NAME = "kaniko-webapp-demo-jenkins"
     IMAGE_NAME = "${DOCKERHUB_USERNAME}" + "/" + "${APP_NAME}"
     IMAGE_TAG = "${BUILD_NUMBER}"
   }
- stages {
-    stage('Checkout SCM') {
-      steps {
-        container('git') {
-          git url: 'https://github.com/kunchalavikram1427/maven-employee-web-application.git',
-          branch: 'master'
-        }
-      }
-    }
     stage('Build SW'){
       steps {
         container('maven'){
