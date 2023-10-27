@@ -4,6 +4,7 @@ pipeline {
       yaml '''
         apiVersion: v1
         kind: Pod
+        namespace: jenkins-n
         metadata:
           labels:
             app: test
